@@ -16,28 +16,33 @@ public final class Polygons {
     public static void main(String[] args) {
 
         try (Scanner scanner = new Scanner(System.in)) {
-            int squares = 0;
-            int rectangles = 0;
-            int other = 0;
 
-            int lines = scanner.nextInt();
+            int[][] polygons = new int[scanner.nextInt()][];
             scanner.nextLine();
 
-            while (lines > 0) {
-                int[] values = Stream.of(scanner.nextLine().trim().split(" ")).mapToInt(Integer::parseInt).toArray();
-
-                if (values[0] == values[1] && values[1] == values[2] && values[2] == values[3]) {
-                    squares++;
-                } else if (values[0] == values[2] && values[1] == values[3]) {
-                    rectangles++;
-                } else {
-                    other++;
-                }
-
-                lines--;
+            for (int i = 0; i < polygons.length; i++) {
+                polygons[i] = Stream.of(scanner.nextLine().trim().split(" ")).mapToInt(Integer::parseInt).toArray();
             }
 
-            System.out.println(squares + " " + rectangles + " " + other);
+            printPolygons(polygons);
         }
+    }
+
+    private static void printPolygons(int[][] polygons) {
+        int squares = 0;
+        int rectangles = 0;
+        int other = 0;
+
+        for (int[] polygon : polygons) {
+            if (polygon[0] == polygon[1] && polygon[1] == polygon[2] && polygon[2] == polygon[3]) {
+                squares++;
+            } else if (polygon[0] == polygon[2] && polygon[1] == polygon[3]) {
+                rectangles++;
+            } else {
+                other++;
+            }
+        }
+
+        System.out.println(squares + " " + rectangles + " " + other);
     }
 }
