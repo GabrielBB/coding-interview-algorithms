@@ -14,10 +14,14 @@ public class SortedHotelList {
             Stream.of(words.split(" ")).forEach(keys::add);
 
             int numberOfReviews = s.nextInt();
+            s.nextLine();
+
+            Map<Integer, Integer> reviewsPerId = new HashMap<>();
 
             while (numberOfReviews-- > 0) {
 
                 int id = s.nextInt();
+                s.nextLine();
                 String review = s.nextLine();
 
                 String[] wordsToSearch = review.split("(?=[,.])|\\s+");
@@ -32,8 +36,13 @@ public class SortedHotelList {
                     }
                 }
 
-                
+                Integer previousReviews = reviewsPerId.get(id);
+                reviewsPerId.put(id, previousReviews == null ? keysPerReview : previousReviews + keysPerReview);
             }
+
+            System.out.println(
+                    reviewsPerId.entrySet().stream().sorted(Collections.reverseOrder(Map.Entry.comparingByValue()))
+                            .map(e -> e.getKey().toString()).collect(Collectors.joining(" ")));
         }
     }
 }
