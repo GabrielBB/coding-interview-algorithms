@@ -9,7 +9,6 @@ public class MutualAnagramsDetector {
         try (Scanner scanner = new Scanner(System.in)) {
 
             int count = scanner.nextInt();
-            scanner.nextLine();
 
             if (count == 0)
                 return;
@@ -30,27 +29,9 @@ public class MutualAnagramsDetector {
                 anagrams.add(word);
             }
 
-            Set<String> listOfAnagrams = new TreeSet<>();
-
-            for (Set<String> anagrams : map.values()) {
-
-                Iterator<String> iterator = anagrams.iterator();
-                StringBuilder finalString = new StringBuilder();
-
-                while (iterator.hasNext()) {
-                    finalString.append(iterator.next());
-
-                    if (iterator.hasNext()) {
-                        finalString.append(',');
-                    }
-                }
-
-                listOfAnagrams.add(finalString.toString());
-            }
-
-            for (String anagrams : listOfAnagrams) {
-                System.out.println(anagrams);
-            }
+            Set<String> result = new TreeSet<>();
+            map.values().forEach(a -> result.add(String.join(",", a)));
+            result.forEach(System.out::println);
         }
     }
 
