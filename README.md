@@ -14,3 +14,24 @@ for (i=0; i < N; i++) {
 }
 
 Answer: 0(N log N)
+
+### Select all pairs of adjacent chars that match, and delete them. For instance, the string aab could be shortened to b in one operation.
+
+static void superReducedString(String s)
+{
+    Stack<Character> stack = new Stack<>();
+    for (int i = s.length() - 1; i >= 0; i--)
+    {
+        char c = s[i];
+        if (stack.size() > 0 && stack.peek() == c)
+        {
+            stack.pop();
+        }
+        else
+        {
+            stack.push(c);
+        }
+    }
+
+    // Print elements of Stack here
+}
