@@ -1,5 +1,6 @@
 package com.github.gabrielbb.bhacking;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;
@@ -13,6 +14,15 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Tests {
+
+    @Test
+    public void testLongestCommonSubstring() {
+        String result = LongestCommonSubstring.getLongestCommonSubstring("hola-casa_loca", "adios_casa_fea");
+        Assert.assertEquals("casa_", result);
+
+        result = LongestCommonSubstring.getLongestCommonSubstring("ABABC", "BABCA");
+        Assert.assertEquals("BABC", result);
+    }
 
     @Test
     public void testExternalMergeSort() throws IOException {
