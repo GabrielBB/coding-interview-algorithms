@@ -25,8 +25,24 @@ public class Tests {
     }
 
     @Test
+    public void testLongestPalindromicSubsequence() {
+        String testCase = "ABBDCACB";
+        Assert.assertEquals(5, LongestPalindromicSubsequence.getLength(testCase, 0, testCase.length() - 1));
+
+        testCase = "PERTO";
+        Assert.assertEquals(1, LongestPalindromicSubsequence.getLength(testCase, 0, testCase.length() - 1));
+
+        testCase = "ABBDCACB";
+        Assert.assertEquals("BCACB", LongestPalindromicSubsequence.getString(testCase, 0, testCase.length() - 1));
+
+        testCase = "CARLON";
+        Assert.assertEquals("", LongestPalindromicSubsequence.getString(testCase, 0, testCase.length() - 1));
+    }
+
+    @Test
     public void testLongestCommonSubstringLength() {
-        Assert.assertEquals(6, LongestCommonSubstring.getLongestCommonSubstringLength("hola_casa_loca", "adios_casa_fea"));
+        Assert.assertEquals(6,
+                LongestCommonSubstring.getLongestCommonSubstringLength("hola_casa_loca", "adios_casa_fea"));
         Assert.assertEquals(4, LongestCommonSubstring.getLongestCommonSubstringLength("ABABC", "BABCA"));
         Assert.assertEquals(1, LongestCommonSubstring.getLongestCommonSubstringLength("A", "A"));
     }
