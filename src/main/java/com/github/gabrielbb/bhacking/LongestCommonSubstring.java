@@ -2,7 +2,7 @@ package com.github.gabrielbb.bhacking;
 
 public class LongestCommonSubstring {
 
-    public static String getLongestCommonSubstring(String a, String b) {
+    public static String getLongestCommonSubstringNaive(String a, String b) {
 
         String result = "";
 
@@ -27,5 +27,27 @@ public class LongestCommonSubstring {
         }
 
         return result;
+    }
+
+    public static int getLongestCommonSubstringLength(String a, String b) {
+
+        int max = 0;
+        int[][] tabulation = new int[a.length()][b.length()];
+
+        for (int i = 0; i < a.length(); i++) {
+
+            for (int x = 0; x < b.length(); x++) {
+
+                if (a.charAt(i) == b.charAt(x)) {
+                    tabulation[i][x] = tabulation[Math.max(0, i - 1)][Math.max(0, x - 1)] + 1;
+
+                    if (tabulation[i][x] > max) {
+                        max = tabulation[i][x];
+                    }
+                }
+            }
+        }
+
+        return max;
     }
 }

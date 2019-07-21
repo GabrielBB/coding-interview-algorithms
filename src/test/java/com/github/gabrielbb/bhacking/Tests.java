@@ -17,11 +17,18 @@ public class Tests {
 
     @Test
     public void testLongestCommonSubstring() {
-        String result = LongestCommonSubstring.getLongestCommonSubstring("hola-casa_loca", "adios_casa_fea");
+        String result = LongestCommonSubstring.getLongestCommonSubstringNaive("hola-casa_loca", "adios_casa_fea");
         Assert.assertEquals("casa_", result);
 
-        result = LongestCommonSubstring.getLongestCommonSubstring("ABABC", "BABCA");
+        result = LongestCommonSubstring.getLongestCommonSubstringNaive("ABABC", "BABCA");
         Assert.assertEquals("BABC", result);
+    }
+
+    @Test
+    public void testLongestCommonSubstringLength() {
+        Assert.assertEquals(6, LongestCommonSubstring.getLongestCommonSubstringLength("hola_casa_loca", "adios_casa_fea"));
+        Assert.assertEquals(4, LongestCommonSubstring.getLongestCommonSubstringLength("ABABC", "BABCA"));
+        Assert.assertEquals(1, LongestCommonSubstring.getLongestCommonSubstringLength("A", "A"));
     }
 
     @Test
