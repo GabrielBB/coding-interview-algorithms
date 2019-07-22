@@ -35,8 +35,10 @@ public class Tests {
         testCase = "ABBDCACB";
         Assert.assertEquals("BCACB", LongestPalindromicSubsequence.getString(testCase, 0, testCase.length() - 1));
 
-        /*testCase = "CARLON";
-        Assert.assertEquals("", LongestPalindromicSubsequence.getString(testCase, 0, testCase.length() - 1));*/
+        /*
+         * testCase = "CARLON"; Assert.assertEquals("",
+         * LongestPalindromicSubsequence.getString(testCase, 0, testCase.length() - 1));
+         */
     }
 
     @Test
@@ -49,15 +51,13 @@ public class Tests {
 
     @Test
     public void testLongestCommonSubsequenceLength() {
-        /*
-        	p c r e a s o o a
-        c	0 1 1 1 1 1 1 1 1
-        a	0 1 1 1 2 2 2 2 1
-        s	0 1 1 1 1 3 3 3 3
-        a	0 1 1 1 2 2 2 2 4
-        z
-        */
         Assert.assertEquals(4, LongestCommonSubsequence.getLength("pcreasooa", "casa"));
+    }
+
+    @Test
+    public void testLongestSubsetSum() {
+        Assert.assertEquals(18, LongestSubsetSum.find(new int[] { 1, 2, 3, 4, 5, 6, 7 }, 3));
+        Assert.assertEquals(15, LongestSubsetSum.find(new int[] { 5, 3, 7, 1, 5, 6, 2 }, 3));
     }
 
     @Test
