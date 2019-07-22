@@ -61,6 +61,12 @@ public class Tests {
     }
 
     @Test
+    public void testUniqueWords() {
+        Assert.assertArrayEquals(new String[] { "Java", "Grails", "also" },
+                UniqueWords.getUniqueWords("Java is great. Grails is also great"));
+    }
+
+    @Test
     public void testExternalMergeSort() throws IOException {
         File testFile = new File(getClass().getClassLoader().getResource("external_merge_sort.txt").getFile());
 
