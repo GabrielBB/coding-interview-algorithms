@@ -72,6 +72,12 @@ public class Tests {
     }
 
     @Test
+    public void testAnagramSubstring() {
+        Assert.assertEquals(1, AnagramSubstring.get("ping", "jingp"));
+        Assert.assertEquals(-1, AnagramSubstring.get("ping", "ijngp"));
+    }
+
+    @Test
     public void testExternalMergeSort() throws IOException {
         File testFile = new File(getClass().getClassLoader().getResource("external_merge_sort.txt").getFile());
 
