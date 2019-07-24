@@ -67,6 +67,11 @@ public class Tests {
     }
 
     @Test
+    public void testDigitSwapping() {
+        Assert.assertEquals(8530, DigitSwapping.swap(3580));
+    }
+
+    @Test
     public void testExternalMergeSort() throws IOException {
         File testFile = new File(getClass().getClassLoader().getResource("external_merge_sort.txt").getFile());
 
