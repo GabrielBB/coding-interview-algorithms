@@ -78,6 +78,13 @@ public class Tests {
     }
 
     @Test
+    public void testNthFibonacciNumber() {
+        Assert.assertEquals(5, NthFibonacci.get(5));
+        Assert.assertEquals(55, NthFibonacci.get(10));
+        Assert.assertEquals(23416728348467685L, NthFibonacci.get(80));
+    }
+
+    @Test
     public void testExternalMergeSort() throws IOException {
         File testFile = new File(getClass().getClassLoader().getResource("external_merge_sort.txt").getFile());
 
