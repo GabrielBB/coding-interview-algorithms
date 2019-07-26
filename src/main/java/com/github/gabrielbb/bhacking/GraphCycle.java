@@ -9,6 +9,7 @@ public class GraphCycle {
 
         private final List<Integer>[] nodes;
 
+        @SuppressWarnings("unchecked")
         private Graph(int size) {
             nodes = new List[size];
 
