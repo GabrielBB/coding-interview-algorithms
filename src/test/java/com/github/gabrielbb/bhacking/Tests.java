@@ -25,6 +25,12 @@ public class Tests {
     }
 
     @Test
+    public void testFindSubstring() {
+        Assert.assertEquals(-1, FindSubstring.findSubstring("practice", "geeksforgeeks"));
+        Assert.assertEquals(5, FindSubstring.findSubstring("for", "geeksforgeeks"));
+    }
+
+    @Test
     public void testLongestPalindromicSubsequence() {
         String testCase = "ABBDCACB";
         Assert.assertEquals(5, LongestPalindromicSubsequence.getLength(testCase, 0, testCase.length() - 1));
