@@ -20,7 +20,8 @@ public class FindSubstring {
 					return i - (sub.length() - 1);
 				}
 			} else if (subIndex > 0) {
-				i = (nextSearch == -1 ? i - (subIndex - 1) : nextSearch);
+				i = (nextSearch == -1 ? i : nextSearch);
+				
 				nextSearch = -1;
 				subIndex = 0;
 			}
