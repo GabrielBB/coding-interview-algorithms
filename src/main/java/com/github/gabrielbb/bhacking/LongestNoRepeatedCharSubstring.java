@@ -2,6 +2,7 @@ package com.github.gabrielbb.bhacking;
 
 public class LongestNoRepeatedCharSubstring {
 
+    // 0(n)
     public static int find(String s) {
 
         int max = 0;
