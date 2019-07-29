@@ -84,6 +84,15 @@ public class Tests {
     }
 
     @Test
+    public void mergeTwoSortedArrays() {
+        Assert.assertArrayEquals(new int[] { 1, 2, 2, 3, 4, 6, 7, 9 },
+                MergeTwoArrays.merge(new int[] { 1, 3, 6, 7 }, new int[] { 2, 2, 4, 9 }));
+
+        Assert.assertArrayEquals(new int[] { 1, 2, 3, 5, 6, 7 },
+                MergeTwoArrays.merge(new int[] { 1, 3, 6, 7 }, new int[] { 2, 5 }));
+    }
+
+    @Test
     public void testNthFibonacciNumber() {
         Assert.assertEquals(5, NthFibonacci.get(5));
         Assert.assertEquals(55, NthFibonacci.get(10));

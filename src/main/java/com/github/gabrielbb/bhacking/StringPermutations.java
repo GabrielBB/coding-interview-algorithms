@@ -3,7 +3,7 @@ package com.github.gabrielbb.bhacking;
 public class StringPermutations {
 
     public static void main(String[] args) {
-        //printPermutations("abb", "");
+        printPermutations("abb", "");
         printPermutations("abb", 0);
     }
 
