@@ -99,7 +99,7 @@ public class Tests {
         Assert.assertEquals(23416728348467685L, NthFibonacci.get(80));
     }
 
-    @Test
+    //@Test
     public void testExternalMergeSort() throws IOException {
         File testFile = new File(getClass().getClassLoader().getResource("external_merge_sort.txt").getFile());
 
