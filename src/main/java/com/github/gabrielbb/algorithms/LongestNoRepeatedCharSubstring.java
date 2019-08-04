@@ -1,4 +1,4 @@
-package com.github.gabrielbb.bhacking;
+package com.github.gabrielbb.algorithms;
 
 public class LongestNoRepeatedCharSubstring {
 

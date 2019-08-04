@@ -1,4 +1,4 @@
-package com.github.gabrielbb.bhacking;
+package com.github.gabrielbb.algorithms;
 
 import java.io.IOException;
 import java.util.Scanner;

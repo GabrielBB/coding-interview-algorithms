@@ -1,4 +1,4 @@
-package com.github.gabrielbb.bhacking;
+package com.github.gabrielbb.algorithms;
 
 import java.util.Collections;
 import java.util.PriorityQueue;
